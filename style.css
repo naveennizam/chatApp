@@ -4,15 +4,28 @@ body {
     padding: 0;
 }
 
-header {
+.main {
+    height: 100px;
+    background-color: #128C7E;
+    color: white;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.inbox {
     text-align: center;
 }
 
-#messages{
-    padding-bottom: 30%;
+#messages {
+    padding-bottom: 20%;
 }
 
-li {   /*  reciever msg in list*/
+li {
+    /*  reciever msg in list*/
     list-style-type: none;
     margin-bottom: 10px;
     background-color: #e3e3e3;
@@ -22,7 +35,8 @@ li {   /*  reciever msg in list*/
     width: 50%;
 }
 
-li span { /* reciever name */
+li span, .sent span {
+    /* reciever name */
     font-style: italic;
     font-weight: bolder;
     color: #5c0ddb;
@@ -34,11 +48,13 @@ li span { /* reciever name */
     margin: auto;
 }
 
-#message-form {
+#forms {
     text-align: center;
     position: fixed;
-    bottom: 15px;
     width: 83%;
+    bottom: 0px;
+    background-color: #f3f2f3;
+    height: 50px;
 }
 
 input {
@@ -53,20 +69,14 @@ button {
     height: 38px;
     border: none;
     border-radius: 4px;
-    /* background-color: #075E54; teal green */
     background-color: #128C7E;
     color: #f3f2f3;
     font-size: large;
 }
 
-.sent {   /* sender */
-    /* text-align: right; */
-     margin-left: 50%;   
+.sent {
+    /* sender */
+    margin-left: 50%;
     background-color: #6ad792;
     color: rgb(36, 36, 36);
-   
-}
-
-.sent span {   /* sender name*/ 
-    color: #1004fa;
 }

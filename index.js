@@ -2,30 +2,22 @@
 const db = firebase.database();
 const username = prompt("Please Tell Us Your Name");
 
-document.querySelector("#message-form").addEventListener("submit", sendMessage);
-
+document.querySelector("#forms").addEventListener("submit", sendMessage);
 function sendMessage(e) {
     e.preventDefault();
 
    
-    const messageInput = document.querySelector("#message-input");
-    const message = messageInput.value;
+    const Input = document.querySelector("#input");
+    const message = Input.value;
 
     // clear the input box
-    messageInput.value = "";
+    Input.value = "";
 
     //auto scroll to bottom
     document
         .querySelector("#messages")
-        .scrollIntoView({ behavior: "smooth", block: "end", inline: "start" });
+        .scrollIntoView({ behavior: "smooth", block: "end" });
 
-    // create db collection and send in the data
-    // // get values to be submitted
-   // const timestamp = Date.now();
-    // db.ref("memo/" + timestamp).set({
-    //   username,
-    //   message,
-    // });
 
     firebase.database().ref(`memo`).push().set({
         username,
